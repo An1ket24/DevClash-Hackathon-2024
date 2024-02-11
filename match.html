@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="description" content="Game Warrior Template">
+	<meta name="keywords" content="warrior, game, creative, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->   
+	<link href="img/favicon.ico" rel="shortcut icon"/>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/owl.carousel.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="css/animate.css"/>
+</head>
+<body>
+    <!-- Header section -->
+	<header class="header-section">
+		<div class="container">
+			<!-- logo -->
+			<a class="site-logo" href="index.html">
+				<img src="img/logo.png" alt="">
+			</a>
+			<div class="user-panel">
+				<a href="register.php">Join</a>  /  <a href="register.php">Register</a>
+			</div>
+			<!-- responsive -->
+			<div class="nav-switch">
+				<i class="fa fa-bars"></i>
+			</div>
+			<!-- site menu -->
+			<nav class="main-menu">
+				<ul>
+                    <li><a href="index.html">Home</a></li>
+					<li><a href="tournaments.html">Tournaments</a></li>
+					<li><a href="live.html">Watch Live</a></li>
+					<li><a href="match.html">Schedule Match</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+    <header>
+        
+        <h1 class="h1">Esports Tournament Matches Schedule</h1>
+    </header>
+    <main id="matchContainer">
+    </main>
+
+  
+</body>
+</html>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Define match data
+    const matches = [
+        { matchNumber: 1, teams: "Team A vs Team B", date: "January 15, 2024", time: "10:00 AM" },
+        { matchNumber: 2, teams: "Team C vs Team D", date: "January 16, 2024", time: "2:00 PM" }
+        // Add more matches as needed
+    ];
+
+    // Get the match container
+    const matchContainer = document.getElementById("matchContainer");
+
+    // Function to create match elements
+    function createMatchElement(match) {
+        const matchDiv = document.createElement("div");
+        matchDiv.classList.add("match");
+
+        const matchHeading = document.createElement("h2");
+        matchHeading.textContent = "Match " + match.matchNumber;
+
+        const teamsPara = document.createElement("p");
+        teamsPara.textContent = "Teams: " + match.teams;
+
+        const datePara = document.createElement("p");
+        datePara.textContent = "Date: " + match.date;
+
+        const timePara = document.createElement("p");
+        timePara.textContent = "Time: " + match.time;
+
+        matchDiv.appendChild(matchHeading);
+        matchDiv.appendChild(teamsPara);
+        matchDiv.appendChild(datePara);
+        matchDiv.appendChild(timePara);
+
+        return matchDiv;
+    }
+
+    // Function to render matches
+    function renderMatches() {
+        matchContainer.innerHTML = ""; // Clear previous matches
+        matches.forEach(function(match) {
+            const matchElement = createMatchElement(match);
+            matchContainer.appendChild(matchElement);
+        });
+    }
+
+    // Call renderMatches to initially render matches
+    renderMatches();
+});
+
+</script>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('img/recent-game/4.jpg'); /* Replace 'background.jpg' with the path to your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7); /* Add transparency to the header */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.9); /* Add transparency to the main content area */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+}
+
+.match {
+    border: 1px solid #ccc;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9; /* Light gray background color */
+}
+
+.match h2 {
+    margin-top: 0;
+}
+
+
+</style>

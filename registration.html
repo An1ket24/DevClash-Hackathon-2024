@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tournament Registration</title>
+</head>
+<body>
+    <h2>Tournament Registration</h2>
+    <form action="register.php" method="post">
+        <!-- Tournament Registration -->
+        <h3>Register Tournament</h3>
+        <label for="tournament_name">Tournament Name:</label><br>
+        <input type="text" id="tournament_name" name="tournament_name" required><br>
+        
+        <label for="start_date">Start Date:</label><br>
+        <input type="date" id="start_date" name="start_date" required><br>
+        
+        <label for="end_date">End Date:</label><br>
+        <input type="date" id="end_date" name="end_date" required><br>
+        
+        <label for="organizer_id">Organizer ID:</label><br>
+        <input type="text" id="organizer_id" name="organizer_id" required><br>
+        
+        <button type="submit" name="register_tournament">Register Tournament</button>
+        
+        <!-- Team Registration -->
+        <h3>Register Team</h3>
+        <label for="team_name">Team Name:</label><br>
+        <input type="text" id="team_name" name="team_name" required><br>
+        
+        <label for="captain_id">Captain ID:</label><br>
+        <input type="text" id="captain_id" name="captain_id" required><br>
+        
+        <button type="submit" name="register_team">Register Team</button>
+    </form>
+</body>
+</html>
